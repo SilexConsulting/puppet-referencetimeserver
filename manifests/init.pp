@@ -15,6 +15,6 @@ class referencetimeserver (
 ) inherits referencetimeserver::params {
   class {'referencetimeserver::install': } ->
   class {'referencetimeserver::config': } ~>
-  Service['tomcat7'] ->
+  Service[$referencetimeserver::params::tomcat_service] ->
   Class['referencetimeserver']
 }
